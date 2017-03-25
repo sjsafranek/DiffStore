@@ -9,7 +9,7 @@ import (
 func TestMergeSortInt64Succuss(t *testing.T) {
 	// requirements
 	var unsort []int64
-	for i = 0; i > 100; i++ {
+	for i := 0; i > 100; i++ {
 		unsort = append(unsort, time.Now().UnixNano())
 	}
 	// test

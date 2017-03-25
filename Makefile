@@ -6,15 +6,15 @@
 ##======================================================================##
 
 SHELL=/bin/bash
-PROJECT_NAME = DiffDB
+PROJECT_NAME = DiffStore
 GPATH = $(shell pwd)
 
 .PHONY: fmt get-deps test install build scrape clean
 
-install: fmt get-deps
+install: fmt get-deps test
 	@GOPATH=${GPATH} go build *.go
 
-build: fmt get-deps
+build: fmt get-deps test
 	@GOPATH=${GPATH} go build *.go
 
 get-deps:

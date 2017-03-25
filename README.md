@@ -1,12 +1,12 @@
-[![GoDoc](https://godoc.org/github.com/sjsafranek/DiffDB?status.png)](https://godoc.org/github.com/sjsafranek/DiffDB)
-[![Go Report Card](https://goreportcard.com/badge/github.com/sjsafranek/DiffDB)](https://goreportcard.com/report/github.com/sjsafranek/DiffDB)
-[![License MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](http://sjsafranek.github.io/DiffDB/)
+[![GoDoc](https://godoc.org/github.com/sjsafranek/DiffStore?status.png)](https://godoc.org/github.com/sjsafranek/DiffStore)
+[![Go Report Card](https://goreportcard.com/badge/github.com/sjsafranek/DiffStore)](https://goreportcard.com/report/github.com/sjsafranek/DiffStore)
+[![License MIT License](https://img.shields.io/github/license/mashape/apistatus.svg)](http://sjsafranek.github.io/DiffStore/)
 
-# DiffDB
-BoltDb wrapper for storing diffs
+# DiffStore
+GoLang struct for storing text changes
 
 ## Documentation
-https://godoc.org/github.com/sjsafranek/DiffDB
+https://godoc.org/github.com/sjsafranek/DiffStore
 
 ## ToDo
  - Test with travis-ci.org
