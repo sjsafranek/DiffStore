@@ -6,7 +6,6 @@ import (
 
 // DiffStore struct for storing diff data
 type DiffStore struct {
-	// Name         string
 	CurrentValue string
 	Diffs        map[int64]string
 	Shards       map[int64]DiffShard
@@ -15,7 +14,6 @@ type DiffStore struct {
 
 // DiffShard struct for storing pieces of diff data
 type DiffShard struct {
-	// Name         string
 	CurrentValue string
 	Diffs        map[int64]string
 	lock         sync.RWMutex
