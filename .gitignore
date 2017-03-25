@@ -1,0 +1,6 @@
+*.db
+*.bolt
+pkg
+src
+bin
+db-cli
