@@ -153,8 +153,8 @@ func (self *DiffStore) GetPreviousByIndex(idx int) (string, error) {
 
 	// if index greater than length of snapshot
 	// default to last snapshot
-	if idx > len(snapshots)-1 {
-		idx = len(snapshots) - 1
+	if idx > self.Length()-1 {
+		idx = self.Length() - 1
 	}
 
 	// use index to find timestamp
@@ -197,4 +197,28 @@ func (self *DiffStore) GetPreviousWithinTimestampRange(begin_timestamp int64, en
 
 	// return values
 	return values, nil
+}
+
+func (self *DiffStore) ClosestSnapshotToTimestamp(timestamp int64) int64 {
+	snapshots := self.GetSnapshots()
+
+	// default to first value
+	var ts int64 = snapshots[0]
+	if 0 > timestamp {
+		return ts
+	}
+
+	// find closest timestamp
+	for _, snapshot := range snapshots {
+		if timestamp >= snapshot && ts < snapshot {
+			ts = snapshot
+		}
+	}
+
+	return ts
+}
+
+// length returns number of snapshots
+func (self *DiffStore) Length() int {
+	return len(self.GetSnapshots())
 }
