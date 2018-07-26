@@ -6,10 +6,10 @@ import (
 
 // DiffStore struct for storing diff data
 type DiffStore struct {
-	CurrentValue string
-	Diffs        map[int64]string
-	Shards       map[int64]DiffShard
-	lock         sync.RWMutex
+	CurrentValue string           `json:"value"`
+	Diffs        map[int64]string `json:"diffs"`
+	// Shards       map[int64]DiffShard
+	lock sync.RWMutex
 }
 
 // DiffShard struct for storing pieces of diff data

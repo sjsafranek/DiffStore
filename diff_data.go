@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
+
+	"github.com/sjsafranek/goutils/sorting"
 )
 
 import "github.com/sergi/go-diff/diffmatchpatch"
@@ -110,7 +112,7 @@ func (self *DiffStore) GetSnapshots() []int64 {
 	}
 	self.lock.Unlock()
 	// SORT KEYS
-	keys = MergeSortInt64(keys)
+	keys = sorting.MergeSortInt64(keys)
 	return keys
 }
 
