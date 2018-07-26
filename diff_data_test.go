@@ -8,11 +8,11 @@ import (
 var TestDiffStore DiffStore
 
 func init() {
-	TestDiffStore = NewDiffStore()
+	TestDiffStore = New()
 }
 
 func generateTestRandomData(testname string, num int) {
-	TestDiffStore = NewDiffStore()
+	TestDiffStore = New()
 	for i := 0; i < num; i++ {
 		new_value := fmt.Sprintf("%v_%v", testname, i)
 		TestDiffStore.Update(new_value)

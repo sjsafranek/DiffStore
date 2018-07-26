@@ -9,7 +9,7 @@ import (
 import "github.com/sergi/go-diff/diffmatchpatch"
 
 // NewDiffStore creates and returns DiffStore struct
-func NewDiffStore() DiffStore {
+func New() DiffStore {
 	var ddata DiffStore
 	// ddata.Name = name
 	ddata.CurrentValue = ""
