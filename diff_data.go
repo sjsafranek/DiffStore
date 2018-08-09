@@ -49,6 +49,7 @@ func (self *DiffStore) diffRebuildtexts(diffs []diffmatchpatch.Diff) []string {
 	return text
 }
 
+// rebuildTextsToDiffN rebuilds text value until the supplied update index is reached
 func (self *DiffStore) rebuildTextsToDiffN(index int) (string, error) {
 	dmp := diffmatchpatch.New()
 	lastText := ""
@@ -100,6 +101,7 @@ func (self *DiffStore) GetCurrent() string {
 	return self.CurrentValue
 }
 
+// GetPreviousByIndex builds and returns previous text value by update index
 func (self *DiffStore) GetPreviousByIndex(idx int) (string, error) {
 	// check inputs
 	if 0 > idx {
@@ -118,6 +120,7 @@ func (self *DiffStore) GetPreviousByIndex(idx int) (string, error) {
 	return oldValue, err
 }
 
+// Length returns length of text updates
 func (self *DiffStore) Length() int {
 	return len(self.Diffs)
 }
