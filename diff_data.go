@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
-)
 
-import "github.com/sergi/go-diff/diffmatchpatch"
+	"github.com/sergi/go-diff/diffmatchpatch"
+)
 
 // NewDiffStore creates and returns DiffStore struct
 func New() DiffStore {
@@ -57,8 +57,6 @@ func (self *DiffStore) rebuildTextsToDiffN(index int) (string, error) {
 	defer self.lock.Unlock()
 
 	for i, diff := range self.Diffs {
-
-		// diff := self.Diffs[snapshot]
 		seq1, _ := dmp.DiffFromDelta(lastText, diff)
 		textsLinemode := self.diffRebuildtexts(seq1)
 		rebuilt := textsLinemode[len(textsLinemode)-1]
@@ -106,13 +104,6 @@ func (self *DiffStore) GetPreviousByIndex(idx int) (string, error) {
 	// check inputs
 	if 0 > idx {
 		return "", fmt.Errorf("Index must be positive integer")
-		// make positive number
-		// for {
-		// 	idx += (self.Length() - 1)
-		// 	if 0 < idx {
-		// 		break
-		// 	}
-		// }
 	}
 
 	// use timestamp to find value
